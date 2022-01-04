@@ -26,18 +26,11 @@ jobs:
       - run:
           name: Test
           command: mvn test
-      - restore_cache:
-          keys:
-            # Find a cache corresponding to this specific package-lock.json checksum
-            # when this file is changed, this key will fail
-            - v1-npm-deps-{{ checksum "package-lock.json" }}
-            # Find the most recently generated cache used from any branch
-            - v1-npm-deps-
-
-      - save_cache:
-          key: my-cache
-          paths:
-            - ~/.m2
+          
+      - store_artifacts:
+          path: target/
+         
+      
     
 
 # Invoke jobs via workflows
