@@ -28,7 +28,7 @@ jobs:
           command: mvn test
           
       - store_artifacts:
-          path: target/
+          path: /home/circleci/project/webapp/target/
          
       
     
