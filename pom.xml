@@ -216,5 +216,16 @@
   <prerequisites>
     <maven>3.0.3</maven>
   </prerequisites>
+         
+   <repositories>
+  <repository>
+    <id>my-artifactory</id>
+    <url>https:54.167.5.26:8081/artifactory/maven</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+
 
 </project>
