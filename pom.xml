@@ -220,7 +220,7 @@
    <repositories>
   <repository>
     <id>my-artifactory</id>
-    <url>https:54.167.5.26:8081/artifactory/maven</url>
+    <url>http://50.16.37.205:8081/artifactory/</url>
     <snapshots>
       <enabled>false</enabled>
     </snapshots>
