@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment{
         PATH = "/opt/apache-maven-3.6.3/bin/:$PATH"
-        ARTIFACTORY_SERVER = "jfrog-server-1"
-        ARTIFACTORY_REPO = "example-repo-local"
+        ARTIFACTORY_SERVER = "jfrog-server-2"
+        ARTIFACTORY_REPO = "maven"
     }
 
    stages {
@@ -21,20 +21,20 @@ pipeline {
     stage('Upload to Artifactory') {
             steps {
                 script {
-                    def server = Artifactory.server('jfrog-server-1')
+                    def server = Artifactory.server('jfrog-server-2')
                     def uploadSpec = """{
                         "files": [
                             {
                                 "pattern": "*.war",
-                                "target": "example-repo-local/"
+                                "target": "maven/"
                             },
                               {
                                 "pattern": "*.jar",
-                                "target": "example-repo-local/"
+                                "target": "maven/"
                             },
                              {
                                 "pattern": "*.pom.xml",
-                                "target": "example-repo-local/"
+                                "target": "maven/"
                             }
                         ]
                     }"""
