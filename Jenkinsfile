@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
         PATH = "/opt/apache-maven-3.6.3/bin/:$PATH"
-        ARTIFACTORY_SERVER = "jfrog-server-2"
+        ARTIFACTORY_SERVER = "http://50.16.37.205:8081"
         ARTIFACTORY_REPO = "maven"
     }
 
@@ -21,7 +21,7 @@ pipeline {
     stage('Upload to Artifactory') {
             steps {
                 script {
-                    def server = Artifactory.server('jfrog-server-2')
+                    def server = Artifactory.server('http://50.16.37.205:8081')
                     def uploadSpec = """{
                         "files": [
                             {
