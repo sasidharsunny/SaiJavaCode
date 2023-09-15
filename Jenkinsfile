@@ -1,7 +1,9 @@
 pipeline {
     agent any
+      tools {
+        maven 'MAVEN3'
+    }
     environment{
-        PATH = "/opt/apache-maven-3.6.3/bin/:$PATH"
         ARTIFACTORY_SERVER = "Artifactory"
         ARTIFACTORY_REPO = "maven-artifact"
     }
