@@ -17,7 +17,7 @@ pipeline {
         
    stage('Build') {
             steps {
-     sh "mvn clean install"
+    sh 'mvn clean package'
     }
     }
        
@@ -26,20 +26,20 @@ pipeline {
     stage('Upload to Artifactory') {
             steps {
                 script {
-                    def server = Artifactory.server('jfrog-server-2')
+                    def server = Artifactory.server('Artifactory')
                     def uploadSpec = """{
                         "files": [
                             {
                                 "pattern": "*.war",
-                                "target": "maven/"
+                                "target": "maven-artifact/"
                             },
                               {
                                 "pattern": "*.jar",
-                                "target": "maven/"
+                                "target": "maven-artifact/"
                             },
                              {
                                 "pattern": "*.pom.xml",
-                                "target": "maven/"
+                                "target": "maven-artifact/"
                             }
                         ]
                     }"""
