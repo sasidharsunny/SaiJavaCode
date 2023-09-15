@@ -11,7 +11,7 @@ pipeline {
    stages {
         stage('Git clone') {
             steps {
-     git 'https://github.com/sasidharsunny/SaiJavaCode.git'
+     git 'https://github.com/sasidharsunny/SaiJavaCode.git '
 }
         }
         
