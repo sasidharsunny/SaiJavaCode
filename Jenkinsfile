@@ -23,30 +23,7 @@ pipeline {
        
   
        
-    stage('Upload to Artifactory') {
-            steps {
-                script {
-                    def server = Artifactory.server('jfrog-server-2')
-                    def uploadSpec = """{
-                        "files": [
-                            {
-                                "pattern": "*.war",
-                                "target": "maven/"
-                            },
-                              {
-                                "pattern": "*.jar",
-                                "target": "maven/"
-                            },
-                             {
-                                "pattern": "*.pom.xml",
-                                "target": "maven/"
-                            }
-                        ]
-                    }"""
-                    server.upload(uploadSpec)
-                }
-            }
-        }  
+
 
  
 
