@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment{
         PATH = "/opt/apache-maven-3.6.3/bin/:$PATH"
-        ARTIFACTORY_SERVER = "jfrog-server-2"
-        ARTIFACTORY_REPO = "maven"
+        ARTIFACTORY_SERVER = "Artifactory"
+        ARTIFACTORY_REPO = "maven-artifact"
     }
 
    stages {
